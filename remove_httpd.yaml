@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: remove httpd package
+    dnf:
+      name: httpd
+      state: absent
+
+  - name: remove php support for httpd
+    dnf:
+      name: php
+      state: absent
